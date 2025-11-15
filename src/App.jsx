@@ -29,10 +29,12 @@ function App() {
       setError('');
       setGeneratedEmail('');
 
-      const response = await axios.post("http://localhost:8080/api/email/generate", {
-        emailContent,
-        tone,
-      });
+    
+      const response = await axios.post("https://email-backend-8k95.onrender.com/api/email/generate", {
+  emailContent,
+  tone,
+});
+
 
       setGeneratedEmail(
         typeof response.data === 'string' 
